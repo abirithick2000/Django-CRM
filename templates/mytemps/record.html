@@ -1,0 +1,21 @@
+{% extends 'mytemps/base.html' %}
+{% block content %}
+<div class="card" style="margin-top: 170px;">
+    
+    <div class="card-body">
+      <h3 class="card-header table-hover">{{customerRecord.first_name}}{{customerRecord.last_name}}</h3>
+      <p class="card-title"><strong>Email : </strong>{{customerRecord.email}} <br>
+        <strong>Phn no : </strong>{{customerRecord.phone}}<br>
+        <strong>Address : </strong>{{customerRecord.address}} <br>
+        <strong>City : </strong>{{customerRecord.city}}<br>
+        <strong>State : </strong>{{customerRecord.state}}<br>
+        <strong>ZipCode : </strong>{{customerRecord.zipcode}} <br>
+        <strong>CreatedAt : </strong>{{customerRecord.created_at}}<br>
+        <strong>ID : </strong>{{customerRecord.id}}<br>
+      </p>
+     </div>
+  </div>
+<a href="{% url 'home' %}" class="btn btn-secondary" >Back</a> 
+<a href="{% url 'delete_record' customerRecord.id %}" class="btn btn-danger" >Delete</a> 
+<a href="{% url 'update_record' customerRecord.id %}" class="btn btn-secondary" >Update Record</a>          
+{% endblock %}
